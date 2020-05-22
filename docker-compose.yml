@@ -1,0 +1,40 @@
+version: '2'
+services:
+
+  taxi_backend:
+    build: ./
+    restart: always
+    command: node index.js
+    environment:
+      - NODE_ENV=production
+      - MONGO_URI=mongodb://mongodb/taxi_backend
+      - PORT=3100
+      - DIGEST_NAME=sha256
+      - SECRET_KEY=SERVER_STARTER
+      - DEBUG=User,Order,Place,Auth,Error,Socket,APIError
+      - GOOGLE_API_KEY=AIzaSyA83jZKHRmlOFXwdDM81X_pl7kyLb5o4FI
+    expose:
+      - 3100
+    links:
+      - mongodb
+    volumes:
+      - ./public:/home/app/app/public
+    ports:
+      - 3100:3100
+
+  mongodb:
+    image: mongo:latest
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    volumes:
+      - ./data/db:/data/db
+    expose:
+      - 27017
+    ports:
+      - 27017:27107
+
+networks:
+  default:
+    external:
+      name: nginx

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Side</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./driver.js"></script>
+</head>
+<body style="padding: 20px">
+    <button class="btn btn-default" onclick="register()"> Register </button>
+    <button class="btn btn-default" onclick="login()"> Login </button>
+    <button class="btn btn-default" onclick="loginOther()"> LoginOther </button>
+    <button class="btn btn-default" onclick="list()"> Get Users </button>
+    <button class="btn btn-default" onclick="update()"> Update </button>
+
+    <br/><br/> 
+
+    <button class="btn btn-default" onclick="whatIsMe()"> What is me </button>
+    <button class="btn btn-default" onclick="renewLocation()"> Renew Location </button>
+
+    <br/> <br/>
+
+    <button class="btn btn-default" onclick="makeOrder()"> Make Order </button>
+    <br/> <br/>
+    
+    <button class="btn btn-default" onclick="getOrder()"> Get Order </button>
+    <button class="btn btn-default" onclick="getOrdererOrder()"> Get Orderer Record </button>
+    <button class="btn btn-default" onclick="getDriverOrder()"> Get Driver Record </button>
+
+    <br></br>
+
+    <div style="display:inline-flex; width:300px;">
+        <input class="form-control" style="margin-right:4px" placeholder="order number" id="orderNumber"/>
+        <button class="btn btn-default" onclick="acceptOrder()"> Accept </button>
+        <button class="btn btn-default" onclick="releaseOrder()"> Release </button>
+        <button class="btn btn-default" onclick="confirmOrder()"> Confirm Order</button>
+        
+    </div>
+
+    <pre id="message" style="margin-top:20px"> </pre>
+    
+</html>

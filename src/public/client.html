@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Side</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./client.js"></script>
+</head>
+<body style="padding: 20px">
+    <button class="btn btn-default" onclick="register()"> Register </button>
+    <button class="btn btn-default" onclick="registerOther()"> RegisterOther </button>
+    <button class="btn btn-default" onclick="login()"> Login </button>
+    <button class="btn btn-default" onclick="getUser()"> Get User </button>
+    <button class="btn btn-default" onclick="list()"> Get Users </button>
+
+    <br/> <br/>
+    <form>
+        <input type="file" name="driverId" id="driverId">
+    </form>
+    <button class="btn btn-default" onclick="upload()"> Upload </button>
+    <button class="btn btn-default" onclick="update()"> Update </button>
+
+    <br/> <br/>
+
+    <button class="btn btn-default" onclick="whatIsMe()"> What is me </button>
+    <button class="btn btn-default" onclick="renewLocation()"> Renew Location </button>
+
+    <br/> <br/>
+
+
+    <button class="btn btn-default" onclick="findPlace('東海大廈')"> 東海大廈 </button>
+    <button class="btn btn-default" onclick="findPlace('青衣城')"> 青衣城 </button>
+    <button class="btn btn-default" onclick="findPlace('信和')">信和</button>
+    <button class="btn btn-default" onclick="findPlace('會展')">會展</button>
+    <button class="btn btn-default" onclick="findPlace('先達')"> 先達 </button>
+    <button class="btn btn-default" onclick="findAddress()"> Get Address by lat lng </button>
+    <button class="btn btn-default" onclick="path()"> Get Path </button>
+
+    <br/><br/> 
+    <button class="btn btn-default" onclick="getOrder()"> Get Order </button>
+    <button class="btn btn-default" onclick="getAcceptedOrder()"> Get Accepted Order </button>
+    <button class="btn btn-default" onclick="getCommentOrder()"> Get Commentable Order </button>
+    <button class="btn btn-default" onclick="getAllUserOrder()"> Get All User's Order </button>
+    <br/><br/> 
+    <button class="btn btn-default" onclick="createOrder()"> Create Order </button>
+    <button class="btn btn-default" onclick="createOrderOther()"> Create Other Order </button>
+    
+    <br/><br/>
+
+    <div style="display:inline-flex; width:300px;">
+        <input class="form-control" style="margin-right:4px" placeholder="order number" id="orderNumber"/>
+    </div>
+
+    <button class="btn btn-default" onclick="comment()"> Comment </button>
+    <button class="btn btn-default" onclick="cancelOrder()"> Cancel Order </button>
+
+    <button class="btn btn-default" onclick="overtimeOrder()"> Overtime confirm Order </button>
+    <pre id="message" style="margin-top:20px"> </pre>
+</html>
